@@ -1,0 +1,17 @@
+TypeScript: Review this 5-line snippet.
+
+1: function processUser(user?: { name: string; age?: number }) {
+2:   const formattedAge = user.age.toFixed(2);
+3:   console.log(user.name + ' is ' + formattedAge + ' years old');
+4: }
+5: processUser();
+
+Identify the exact line number(s) that cause a runtime crash or a type error, and explain how to fix them in 2 sentences.
+*
+Lines 2 and 3 cause TypeScript errors because user and age may be undefined, which can also cause a runtime crash. Use optional chaining (user?.age) with a default value (?? 0) and user?.name ?? 'Unknown' to safely handle missing values.
+
+
+
+
+
+
